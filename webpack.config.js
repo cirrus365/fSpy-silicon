@@ -24,6 +24,9 @@ const commonConfig = {
   node: {
     __dirname: false,
   },
+  externals: {
+    'electron-window-state': 'commonjs2 electron-window-state',
+  },
 }
 
 const HtmlWebpackPlugin = require('html-webpack-plugin')
