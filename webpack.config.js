@@ -24,30 +24,26 @@ const commonConfig = {
   node: {
     __dirname: false,
   },
-  externals: {
-    'electron-window-state': 'commonjs2 electron-window-state',
-  },
 }
 
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 module.exports = [
-  Object.assign(
-    {
-      target: 'electron-main',
-      entry: { main: './src/main/index.ts' },
+  {
+    ...commonConfig,
+    target: 'electron-main',
+    entry: { main: './src/main/index.ts' },
+    externals: {
+      'electron-window-state': 'commonjs2 electron-window-state',
     },
-    commonConfig
-  ),
-  Object.assign(
-    {
-      target: 'electron-renderer',
-      entry: { gui: './src/gui/index.tsx' },
-      plugins: [
-        new HtmlWebpackPlugin({
-          template: 'src/gui/index.html',
-        }),
-      ],
-    },
-    commonConfig
-  ),
+  },
+  {
+    ...commonConfig,
+    target: 'electron-renderer',
+    entry: { gui: './src/gui/index.tsx' },
+    plugins: [
+      new HtmlWebpackPlugin({
+        template: 'src/gui/index.html',
+      }),
+    ],
+  },
 ]
