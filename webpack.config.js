@@ -32,9 +32,6 @@ module.exports = [
     ...commonConfig,
     target: 'electron-main',
     entry: { main: './src/main/index.ts' },
-    externals: {
-      'electron-window-state': 'commonjs2 electron-window-state',
-    },
   },
   {
     ...commonConfig,

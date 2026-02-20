@@ -17,8 +17,7 @@
  */
 
 import { app, BrowserWindow, dialog, ipcMain, Menu } from 'electron'
-// Use require() to avoid webpack bundling issues with electron-window-state
-const windowStateKeeper = require('electron-window-state')
+import windowStateKeeper from './window-state'
 import { closeSync, openSync, writeSync } from 'fs'
 import { basename, join } from 'path'
 import { CLI } from '../cli/cli'

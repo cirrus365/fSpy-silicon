@@ -121,8 +121,7 @@
       ]
     },
     "files": [
-      "build/**/*",
-      "node_modules/electron-window-state/**/*"
+      "build/**/*"
     ],
     "extraResources": [
       {
